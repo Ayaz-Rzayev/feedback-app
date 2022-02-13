@@ -1,14 +1,14 @@
 import React, { Fragment } from "react";
-import styles from "./App.module.css"
+import styles from "./App.module.css";
+import FeedbackList from "./components/FeedbackList";
 import Header from "./components/UI/Header";
-import FeedbackItem from "./components/FeedbackItem";
 
 function App() {
   return (
     <Fragment>
-      <Header text="Feedback UI"/>
+      <Header text="Feedback UI" />
       <div className={styles.container}>
-        <FeedbackItem/>
+        <FeedbackList />
       </div>
     </Fragment>
   );
