@@ -9,7 +9,7 @@ const Header = (props) => {
     </header>
   )
 }
-
+ 
 Header.defaultProps = {
   text: 'Header text'
 }

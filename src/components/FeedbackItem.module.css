@@ -1,0 +1,29 @@
+.card{
+  margin-top: 2rem;
+  padding: 1.5rem 6rem;
+  background-color: #fff;
+  color:#101021;
+  border-radius: 30px;
+  position: relative;
+}
+
+.card__num{
+  background-color: #ff6a95;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -15px;
+  left: -12px;
+}
+
+.card__text{
+  font-weight: 500;
+}
