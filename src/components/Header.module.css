@@ -2,3 +2,12 @@
   display: flex;
   justify-content: center;
 }
+
+.header{
+  background-color: #00000080;
+}
+
+.header h2{
+  color:#ff6a95;
+  padding: 12px 0;
+}

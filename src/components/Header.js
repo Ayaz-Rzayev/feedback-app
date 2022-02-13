@@ -4,10 +4,8 @@ import PropTypes from "prop-types"
 
 const Header = (props) => {
   return (
-    <header>
-      <div className={styles.container}>
+    <header className={[styles.header, styles.container].join(' ')}>
         <h2>{props.text}</h2>
-      </div>
     </header>
   )
 }
