@@ -1,13 +1,3 @@
-.card {
-  margin-top: 2rem;
-  padding: 1.5rem 6rem;
-  width: 600px;
-  background-color: #fff;
-  color: #101021;
-  border-radius: 30px;
-  position: relative;
-}
-
 .card__num {
   background-color: #ff6a95;
   color: #fff;

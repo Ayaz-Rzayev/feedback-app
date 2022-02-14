@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./FeedbackItem.module.css";
+import Card from "./UI/Card";
 
-const FeedbackItem = ({ id, rating, text }) => {
+const FeedbackItem = ({rating, text }) => {
   return (
-    <div className={styles.card} key={id}>
+    <Card>
       <div className={styles["card__num"]}>{rating}</div>
       <p className={styles["card__text"]}>{text}</p>
-    </div>
+    </Card>
   );
 };
 

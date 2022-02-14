@@ -1,0 +1,14 @@
+.card {
+  margin-top: 2rem;
+  padding: 1.5rem 6rem;
+  width: 60%;
+  background-color: #fff;
+  color: #101021;
+  border-radius: 30px;
+  position: relative;
+}
+
+.reverse{
+  background-color: #101021;
+  color: #fff;
+}
