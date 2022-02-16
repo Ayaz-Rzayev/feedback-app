@@ -18,14 +18,14 @@ const FeedbackForm = () => {
           How would you rate <br />
           your expirience with us?
         </h2>
-        <div>
+        <div className={styles['input-group']}>
           <input
             onChange={inputChangeHandler}
             type="text"
             placeholder="Write a review"
             value={review}
           />
-          <button type="submit">Add</button>
+          <Button type="submit" >Add</Button>
         </div>
       </form>
     </Card>

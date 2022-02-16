@@ -1,0 +1,21 @@
+.btn{
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  color: #fff;
+
+}
+
+.btn-primary{
+  background-color: #202142;
+}
+
+.btn-secondary{
+  background-color: #ff6a95;
+}
+
+.btn:hover{
+  transform: scale(1.05);
+}
