@@ -7,7 +7,7 @@ const FeedbackItem = ({ id, rating, text, onDelete }) => {
   return (
     <Card>
       <div className={styles["card__num"]}>{rating}</div>
-      <button className={styles.close} onClick={() => onDelete(id)}>
+      <button className={styles['close-btn']} onClick={() => onDelete(id)}>
         <FaTimes color="purple" />
       </button>
       <p className={styles["card__text"]}>{text}</p>

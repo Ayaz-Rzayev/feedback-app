@@ -18,3 +18,11 @@
 .card__text {
   font-weight: 500;
 }
+
+.close-btn{
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  right: 40px;
+}
