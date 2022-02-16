@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import FeedbackItem from "./FeedbackItem";
-import FeedbackData from "../data/FeedbackData";
 
 const FeedbackList = (props) => {
 

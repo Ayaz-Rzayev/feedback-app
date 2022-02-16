@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import FeedbackList from "./components/FeedbackList";
 import FeedbakStats from "./components/FeedbackStats";
 import Header from "./components/UI/Header";
+import FeedbackForm from "./components/FeedbackForm";
 import FeedbackData from "./data/FeedbackData";
 
 
@@ -20,6 +21,7 @@ function App() {
     <Fragment>
       <Header text="Feedback UI" />
       <div className={styles.container}>
+        <FeedbackForm />
         <FeedbakStats feedbacks={feedbacks}/>
         <FeedbackList feedbacks ={feedbacks} onDelete={feedbackDeleteHandler}/>
       </div>

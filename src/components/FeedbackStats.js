@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./FeedbackStats.module.css";
 
 const FeedbakStats = ({ feedbacks }) => {
-  console.log(feedbacks);
   const reviewsCount = feedbacks.length;
   const average =
     feedbacks.reduce((acc, cur) => {
