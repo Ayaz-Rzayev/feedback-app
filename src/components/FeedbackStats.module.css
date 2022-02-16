@@ -1,0 +1,6 @@
+.feedback-stats{
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+  margin-top: 2rem;
+}
