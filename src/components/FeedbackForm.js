@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RatingBar from "./RatingBar";
 import Card from "./UI/Card";
 import Button from "./UI/Button";
 import styles from "./FeedbackForm.module.css";
@@ -7,6 +8,7 @@ const FeedbackForm = () => {
   const [review, setReview] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
+  const [rating, setRating] = useState(10)
 
   const inputChangeHandler = (e) => {
     if (e.target.value.trim().length >= 10) {
@@ -26,6 +28,7 @@ const FeedbackForm = () => {
           How would you rate <br />
           your expirience with us?
         </h2>
+        <RatingBar select={(rating) => {setRating(rating)}}/>
         <div className={styles["input-group"]}>
           <input
             onChange={inputChangeHandler}
