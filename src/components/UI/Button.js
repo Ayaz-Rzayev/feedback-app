@@ -1,20 +1,20 @@
 import React from "react";
-import styles from './Button.module.css'
+import styles from "./Button.module.css";
 
 const Button = (props) => {
   let btnVersion;
-  switch(props.version){
-    case 'btn-secondary':
-      btnVersion = styles['btn-secondary']
-      break
+  switch (props.version) {
+    case "btn-secondary":
+      btnVersion = styles["btn-secondary"];
+      break;
     default:
-      btnVersion = styles['btn-primary']
+      btnVersion = styles["btn-primary"];
   }
 
   return (
     <button
       type={props.type}
-      className={[styles.btn, btnVersion].join(' ')}
+      className={[styles.btn, btnVersion].join(" ")}
       disabled={props.isDisabled}
     >
       {props.children}

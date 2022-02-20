@@ -19,3 +19,12 @@
 .btn:hover{
   transform: scale(1.05);
 }
+
+.btn:disabled{
+  background-color: #c4c4c4;
+}
+
+.btn:disabled:hover{
+  transform: none;
+  cursor: default;
+}

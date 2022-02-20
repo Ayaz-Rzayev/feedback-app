@@ -17,3 +17,7 @@
   margin: 0;
   border: none;
 }
+
+.input-group input:focus{
+  outline: none;
+}
