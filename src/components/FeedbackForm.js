@@ -4,8 +4,8 @@ import Card from "./UI/Card";
 import Button from "./UI/Button";
 import styles from "./FeedbackForm.module.css";
 
-const FeedbackForm = () => {
-  const [review, setReview] = useState("");
+const FeedbackForm = (props) => {
+  const [text, setReview] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(10)
@@ -21,9 +21,20 @@ const FeedbackForm = () => {
     setReview(e.target.value)
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const newFeedback ={
+      text,
+      rating,
+    }
+    props.onAdd(newFeedback)
+    setBtnDisabled(true)
+    setReview('')
+  }
+
   return (
     <Card>
-      <form className={styles["add-review-form"]}>
+      <form onSubmit={handleSubmit} className={styles["add-review-form"]}>
         <h2>
           How would you rate <br />
           your expirience with us?
@@ -34,7 +45,7 @@ const FeedbackForm = () => {
             onChange={inputChangeHandler}
             type="text"
             placeholder="Write a review"
-            value={review}
+            value={text}
           />
           <Button type="submit" isDisabled={btnDisabled}>
             Add
