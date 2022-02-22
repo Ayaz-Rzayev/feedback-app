@@ -8,6 +8,7 @@ import Header from "./components/UI/Header";
 import FeedbackForm from "./components/FeedbackForm";
 import FeedbackData from "./data/FeedbackData";
 import AboutPage from "./components/pages/AboutPage";
+import AboutIconLink from "./components/AboutIconLink";
 
 function App() {
   const [feedbacks, setFeedback] = useState(FeedbackData);
@@ -46,6 +47,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
+      <AboutIconLink/>
     </Router>
   );
 }
