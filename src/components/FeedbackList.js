@@ -1,16 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 import FeedbackItem from "./FeedbackItem";
+import FeedbackContext from "./context/FeedbackContext";
 
-const FeedbackList = (props) => {
-
-  return props.feedbacks.map((item) => {
+const FeedbackList = () => {
+  const {feedbacks} = useContext(FeedbackContext)
+  return feedbacks.map((item) => {
     return (
       <FeedbackItem
         key={item.id}
         id={item.id}
         rating={item.rating}
         text={item.text}
-        onDelete={props.onDelete}
       />
     );
   });

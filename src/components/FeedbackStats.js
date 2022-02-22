@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import styles from "./FeedbackStats.module.css";
+import FeedbackContext from "./context/FeedbackContext";
 
-const FeedbakStats = ({ feedbacks }) => {
+const FeedbakStats = () => {
+  const {feedbacks} = useContext(FeedbackContext)
   const reviewsCount = feedbacks.length;
   const average =
     feedbacks.reduce((acc, cur) => {
@@ -11,7 +13,7 @@ const FeedbakStats = ({ feedbacks }) => {
   return (
     <div className={styles["feedback-stats"]}>
       <h4>{reviewsCount} Reviews</h4>
-      <h4>Average Rating: {isNaN(average) ? 0 : average}</h4>
+      <h4>Average Rating: {isNaN(average) ? 0 : average.toFixed(1)}</h4>
     </div>
   );
 };

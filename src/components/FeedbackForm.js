@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import RatingBar from "./RatingBar";
 import Card from "./UI/Card";
 import Button from "./UI/Button";
 import styles from "./FeedbackForm.module.css";
+import FeedbackContext from "./context/FeedbackContext";
 
-const FeedbackForm = (props) => {
+const FeedbackForm = () => {
+  const {feedbackAddHandler} = useContext(FeedbackContext)
   const [text, setReview] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
-  const [rating, setRating] = useState(10)
+  const [rating, setRating] = useState(1)
 
   const inputChangeHandler = (e) => {
     if (e.target.value.trim().length >= 10) {
@@ -27,7 +29,7 @@ const FeedbackForm = (props) => {
       text,
       rating,
     }
-    props.onAdd(newFeedback)
+    feedbackAddHandler(newFeedback)
     setBtnDisabled(true)
     setReview('')
   }
