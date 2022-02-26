@@ -26,3 +26,11 @@
   top: 15px;
   right: 40px;
 }
+
+.edit-btn{
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  right: 60px;
+}

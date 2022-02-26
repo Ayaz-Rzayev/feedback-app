@@ -1,12 +1,21 @@
-import React, {useState} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import styles from "./RatingBar.module.css";
+import FeedbackContext from "./context/FeedbackContext";
 
 const RatingBar = (props) => {
   const [selected, setSelected] = useState(1)
+  const {editFeedback} = useContext(FeedbackContext)
+
   const ratingChangeHandler = (e) => {
     setSelected(+e.currentTarget.value)
     props.select(+e.currentTarget.value)
   };
+
+
+  useEffect(()=>{
+    setSelected(editFeedback.item.rating)
+  }, [editFeedback])
+
 
   return (
     <ul className={styles.rating}>

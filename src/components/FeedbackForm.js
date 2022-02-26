@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import RatingBar from "./RatingBar";
 import Card from "./UI/Card";
 import Button from "./UI/Button";
@@ -6,11 +6,21 @@ import styles from "./FeedbackForm.module.css";
 import FeedbackContext from "./context/FeedbackContext";
 
 const FeedbackForm = () => {
-  const {feedbackAddHandler} = useContext(FeedbackContext)
+  const {feedbackAddHandler, editFeedback, feedbackEditHandler} = useContext(FeedbackContext)
   const [text, setReview] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(1)
+
+  useEffect(()=>{
+    if(editFeedback.edit){
+      setReview(editFeedback.item.text)
+      setRating(editFeedback.item.rating)
+      setBtnDisabled(false)
+    }
+  },[editFeedback])
+
+
 
   const inputChangeHandler = (e) => {
     if (e.target.value.trim().length >= 10) {
@@ -29,7 +39,12 @@ const FeedbackForm = () => {
       text,
       rating,
     }
-    feedbackAddHandler(newFeedback)
+    if(editFeedback.edit){
+      feedbackEditHandler(editFeedback.item.id, newFeedback)
+    }
+    else{
+      feedbackAddHandler(newFeedback)
+    }
     setBtnDisabled(true)
     setReview('')
   }
