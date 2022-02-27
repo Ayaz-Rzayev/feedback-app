@@ -16,7 +16,7 @@
       "text": "this is from db.json"
     },
     {
-      "rating": "10",
+      "rating": 10,
       "text": "New item",
       "id": 4
     }
