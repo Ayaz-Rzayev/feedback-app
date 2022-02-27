@@ -13,17 +13,26 @@ export const FeedbackContextProvider = ({ children }) => {
   }, []);
 
   const fetchFeedback = async () => {
-    const response = await fetch("http://localhost:5000/feedback");
+    const response = await fetch("/feedback");
     const data = await response.json();
     setFeedback(data);
     setIsLoading(false);
   };
 
-  const feedbackAddHandler = (newFeedback) => {
-    newFeedback.id = uuidv4();
-    let newFeedbackList = [newFeedback, ...feedbacks];
-    setFeedback(newFeedbackList);
+  const feedbackAddHandler = async (newFeedback) => {
+    const response = await fetch("/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newFeedback),
+    });
+    const data = await response.json();
+    console.log(data)
+    setFeedback([data, ...feedbacks]);
   };
+
+
   const feedbackDeleteHandler = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
       setFeedback(feedbacks.filter((item) => item.id !== id));
