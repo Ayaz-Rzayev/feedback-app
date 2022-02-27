@@ -1,9 +1,9 @@
 {
   "feedback": [
     {
-      "id": 1,
-      "rating": 8,
-      "text": "this is from db.json"
+      "text": "UPDATE YPP",
+      "rating": 4,
+      "id": 1
     },
     {
       "id": 2,
@@ -14,16 +14,6 @@
       "id": 3,
       "rating": 5,
       "text": "this is from db.json"
-    },
-    {
-      "rating": 10,
-      "text": "New item",
-      "id": 4
-    },
-    {
-      "text": "final test",
-      "rating": 4,
-      "id": 5
     }
   ]
 }

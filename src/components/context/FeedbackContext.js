@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 const FeedbackContext = createContext();
 
@@ -28,13 +27,13 @@ export const FeedbackContextProvider = ({ children }) => {
       body: JSON.stringify(newFeedback),
     });
     const data = await response.json();
-    console.log(data)
+    console.log(data);
     setFeedback([data, ...feedbacks]);
   };
 
-
-  const feedbackDeleteHandler = (id) => {
+  const feedbackDeleteHandler = async (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
+      await fetch(`/feedback/${id}`, { method: "DELETE" });
       setFeedback(feedbacks.filter((item) => item.id !== id));
     }
   };
@@ -46,10 +45,19 @@ export const FeedbackContextProvider = ({ children }) => {
     });
   };
 
-  const feedbackEditHandler = (id, updItem) => {
+  const feedbackEditHandler = async (id, updItem) => {
+    const response = await fetch(`/feedback/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": 'application/json'
+      },
+      body: JSON.stringify(updItem)
+    })
+    const data = await response.json()
+
     setFeedback(
       feedbacks.map((item) =>
-        item.id === id ? (item = { id, ...updItem }) : item
+        item.id === id ? (item = data) : item
       )
     );
   };
