@@ -5,14 +5,18 @@ const FeedbackContext = createContext();
 
 export const FeedbackContextProvider = ({ children }) => {
   const [feedbacks, setFeedback] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [editFeedback, setEditFeedback] = useState({ item: {}, edit: false });
 
-  useEffect(() => {fetchFeedback()}, []);
+  useEffect(() => {
+    fetchFeedback();
+  }, []);
 
   const fetchFeedback = async () => {
     const response = await fetch("http://localhost:5000/feedback");
     const data = await response.json();
-    setFeedback(data)
+    setFeedback(data);
+    setIsLoading(false);
   };
 
   const feedbackAddHandler = (newFeedback) => {
@@ -46,6 +50,7 @@ export const FeedbackContextProvider = ({ children }) => {
       value={{
         feedbacks,
         editFeedback,
+        isLoading,
         feedbackAddHandler,
         feedbackDeleteHandler,
         feedbackEdit,
